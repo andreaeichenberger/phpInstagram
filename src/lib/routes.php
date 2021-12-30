@@ -17,53 +17,55 @@ $dotenv->load();
 
 //Rutas por get y por post
 
-$router->get('/', function(){
+$router->get('/', function () {
     echo "Inicio";
 });
 
-$router->get('/login', function(){
+$router->get('/login', function () {
     $controller = new Login;
     $controller->render('login/index');
 });
 
-$router->post('/auth', function() {
+$router->post('/auth', function () {
     $controller = new Login;
     $controller->auth($_POST);
 });
 
-$router->get('/signup', function() { 
+$router->get('/signup', function () {
     $controller = new Signup;
     $controller->render('signup/index');
 });
 
-$router->post('/register', function() { 
+$router->post('/register', function () {
     $controller = new Signup;
     $controller->register($_POST);
 });
 
-$router->get('/home', function(){
+$router->get('/home', function () {
     $user = unserialize($_SESSION['user']);
     $controller = new Home($user);
     $controller->index();
 });
 
-$router->post('/publish', function(){
-    echo "futuro publish";
+$router->post('/publish', function () {
+    $user = unserialize($_SESSION['user']);
+    $controller = new Home($user);
+    $controller->store();
 });
 
-$router->get('/profile', function(){
+$router->get('/profile', function () {
     echo "futuro profile";
 });
 
-$router->post('/addLike', function(){
+$router->post('/addLike', function () {
     echo "futuro addLike";
 });
 
-$router->get('/signout', function(){
+$router->get('/signout', function () {
     echo "futuro signout";
 });
 
-$router->get('/profile/{username}', function($username){
+$router->get('/profile/{username}', function ($username) {
     echo "futuro profile";
 });
 

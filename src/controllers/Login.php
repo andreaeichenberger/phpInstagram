@@ -3,6 +3,7 @@
 namespace Eichenberger\Instagram\controllers;
 
 use Eichenberger\Instagram\lib\Controller;
+use Eichenberger\Instagram\models\User;
 
 
 class Login extends Controller {

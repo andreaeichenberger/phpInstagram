@@ -2,6 +2,8 @@
 
 namespace Eichenberger\Instagram\lib;
 
+use Eichenberger\Instagram\lib\Database;
+
 class Model {
     private Database $db;
 
@@ -11,10 +13,10 @@ class Model {
 
     //Para poder hacer una consulta
     public function query($query) {
-        $this->db->connect()->query($query);
+        return $this->db->connect()->query($query);
     }
 
     public function prepare($query) {
-        $this->db->connect()->prepare($query);
+        return $this->db->connect()->prepare($query);
     }
 }

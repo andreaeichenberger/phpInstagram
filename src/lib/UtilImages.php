@@ -13,7 +13,7 @@ class UtilImages {
         $target_file = $target_dir . $hash;
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        
+
         //Nota que si no obtiene tamaño de imagen es porque no hay imagen
         $check = getimagesize($photo["tmp_name"]);
         if($check !== false) {

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Eichenberger\Instagram\models;
 

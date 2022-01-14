@@ -28,7 +28,7 @@ class User extends Model {
             $db = new Database();
             $query = $db->connect()->prepare('SELECT username FROM users WHERE username = :username');
             $query->execute( ['username'=> $username] );
-    
+
             if($query->rowCount() > 0) {
                 return true;
             } else {

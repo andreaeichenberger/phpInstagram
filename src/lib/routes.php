@@ -76,7 +76,7 @@ $router->post('/publish', function () {
 $router->get('/profile', function () {
     notAuth();
     $user = unserialize($_SESSION['user']);
-    $controller = new Profile(); 
+    $controller = new Profile();
     $controller->getUserProfile($user);
 });
 
@@ -95,7 +95,7 @@ $router->get('/signout', function () {
 
 $router->get('/profile/{username}', function ($username) {
     notAuth();
-    $controller = new Profile(); 
+    $controller = new Profile();
     $controller->getUsernameProfile($username);
 });
 

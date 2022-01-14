@@ -13,7 +13,6 @@ class Signup extends Controller{
         parent::__construct();
     }
 
-    
     public function register(){
         $username = $this->post('username');
         $password = $this->post('password');
